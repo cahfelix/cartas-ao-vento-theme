@@ -37,7 +37,7 @@ get_header();
                 <?php
                 // Você pode substituir esta imagem pela foto do Vento
                 // Adicione a imagem em: assets/images/vento-hero.jpg
-                $hero_image = CARTAS_THEME_URI . '/assets/images/vento-hero.jpg';
+                $hero_image = get_template_directory_uri() . '/assets/images/vento-hero.jpg';
                 ?>
                 <img src="<?php echo esc_url( $hero_image ); ?>" alt="Vento" />
             </div>
@@ -65,7 +65,7 @@ get_header();
                 </div>
                 <div class="about-image">
                     <?php
-                    $about_image = CARTAS_THEME_URI . '/assets/images/livro-capa.jpg';
+                    $about_image = get_template_directory_uri() . '/assets/images/livro-capa.jpg';
                     ?>
                     <img src="<?php echo esc_url( $about_image ); ?>" alt="Capa do Livro Cartas ao Vento" />
                 </div>

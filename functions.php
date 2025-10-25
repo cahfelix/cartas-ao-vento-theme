@@ -13,8 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define constantes do tema
  */
 define( 'CARTAS_VERSION', '1.0.0' );
-define( 'CARTAS_THEME_DIR', get_template_directory() );
-define( 'CARTAS_THEME_URI', get_template_directory_uri() );
 
 /**
  * Configuração do tema
@@ -128,8 +126,8 @@ function cartas_scripts() {
     wp_enqueue_style( 'cartas-style', get_stylesheet_uri(), array( 'cartas-google-fonts' ), CARTAS_VERSION );
 
     // Script principal
-    wp_enqueue_script( 'cartas-script', CARTAS_THEME_URI . '/assets/js/main.js', array( 'jquery' ), CARTAS_VERSION, true );
-    
+    wp_enqueue_script( 'cartas-script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), CARTAS_VERSION, true );
+
     // Script de comentários (se necessário)
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -156,11 +154,11 @@ add_filter( 'excerpt_more', 'cartas_excerpt_more' );
 /**
  * Incluir arquivos adicionais
  */
-require_once CARTAS_THEME_DIR . '/inc/template-tags.php';
-require_once CARTAS_THEME_DIR . '/inc/template-functions.php';
+require_once get_template_directory() . '/inc/template-tags.php';
+require_once get_template_directory() . '/inc/template-functions.php';
 
 // Incluir customizações do WooCommerce se estiver ativo
 if ( class_exists( 'WooCommerce' ) ) {
-    require_once CARTAS_THEME_DIR . '/inc/woocommerce.php';
+    require_once get_template_directory() . '/inc/woocommerce.php';
 }
 
