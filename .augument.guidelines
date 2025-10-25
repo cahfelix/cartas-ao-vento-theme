@@ -1,0 +1,70 @@
+# DO NOT EXECUTE COMMANDS OR COMMITS WITHOUT HUMAN CONFIRMATION
+
+# Memory Bank
+- Antes de sugerir código, consultar ./memory-bank/global/*.md
+- Se editar um módulo, consultar também ./memory-bank/modules/<module>/*.delta.md
+- Em caso de divergência, priorizar o delta (local)
+
+# Linguagem
+- Sempre responder e gerar textos em português do Brasil
+- Evitar jargões em inglês quando houver termo em português
+- Explicar de forma didática e empática
+- Usar pontuação simples; evitar aspas decorativas e travessões longos
+
+# Controle de Git
+- Nunca executar comandos Git (commit, push, merge, rebase, tag, etc.) sem minha autorização explícita
+- Sempre perguntar antes de aplicar qualquer modificação no repositório
+- Ao sugerir commits, usar **Conventional Commits** apenas como exemplo (não executar)
+
+Formato: `<type>(optional scope): <subject>`
+Tipos: feat, fix, chore, docs, style, refactor, test, perf
+
+# Padrão de PR
+- Título em **inglês**; descrição em **português**
+- Nunca incluir commits automáticos
+- Priorizar clareza e contexto
+- **Limitar cada PR a um único módulo**; mudanças multi-serviço só quando estritamente necessárias
+
+## Exemplo de conteúdo sugerido para PR
+chore: remove legacy ScrollToTop (now in components/layout/RouteScrollToTop)
+refactor: move ScrollToTop to layout as RouteScrollToTop and update imports
+docs: update README with GA4 setup and Hostinger CI/CD details
+
+
+# Estilo e boas práticas
+- Código limpo, legível e consistente
+- Nomes claros; evitar abreviações desnecessárias
+- Preferir funções puras e componentes pequenos
+- Evitar duplicação; extrair utilitários quando fizer sentido
+- Aplicar SOLID e Clean Architecture quando possível
+- Comentar apenas o que agrega valor, explicando o “porquê”
+- Organizar imports (React, libs externas, internos, locais)
+- Respeitar Prettier e ESLint configurados no projeto
+
+# Refatoração e foco
+- Priorizar legibilidade, redução de duplicação e performance
+- Evitar refatorações cosméticas (renomeações sem ganho real)
+- Explicar o motivo da refatoração nas sugestões
+
+# Diretrizes de revisão (baseadas no Memory Bank)
+- Evitar termos ofensivos (“blacklist”, “whitelist”, etc.); sugerir alternativas inclusivas
+- Evitar acoplamento entre domínios; preferir **DTOs focados**
+- Exigir documentação **Swagger/OpenAPI** nas APIs  
+  - Expor Swagger UI em **/swagger** com **OpenAPI 3.0.3**
+- Em testes, usar `RangeUUID.generate()` em vez de `UUID.randomUUID()`
+- Expor apenas métodos necessários (ISP)
+- Endpoints de listagem devem ter paginação e limite de page size
+- Avaliar impacto arquitetural e de build antes de sugerir novas dependências
+- Reforçar imutabilidade, segurança de tipos e modularidade
+- Não propor troca de libs padrão do projeto sem justificativa forte (ex.: manter Gson se for o padrão)
+
+# Segurança e privacidade
+- Não logar dados sensíveis ou classificados; mascarar/omitir quando indispensável
+- Sugerir métricas e observabilidade sem expor PII
+
+# Tom e colaboração
+- Atuar como colega técnico colaborativo e empático
+- Justificar recomendações com boas práticas e guidelines da empresa
+- Em caso de dúvida ou ambiguidade, perguntar antes de aplicar mudanças
+- Explicar decisões com clareza, evitando respostas frias
+

@@ -1,0 +1,73 @@
+# WordPress
+*.log
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+
+# WP-CLI
+wp-cli.local.yml
+
+# Arquivos do sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.settings/
+.buildpath
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Composer
+/vendor/
+composer.lock
+
+# Arquivos de build
+/dist/
+/build/
+*.min.css
+*.min.js
+*.map
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.cache
+
+# Arquivos de backup
+*.bak
+*.backup
+*-backup
+*.sql
+*.sql.gz
+
+# Uploads (descomente se não quiser versionar uploads)
+# /assets/images/uploads/
+
+# Arquivos de configuração local
+.env
+.env.local
+config-local.php
+
+# Logs
+error_log
+debug.log
+
