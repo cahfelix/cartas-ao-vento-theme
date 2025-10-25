@@ -121,9 +121,12 @@ add_action( 'widgets_init', 'cartas_widgets_init' );
  * Enfileirar scripts e estilos
  */
 function cartas_scripts() {
+    // Google Fonts - Playfair Display e Inter
+    wp_enqueue_style( 'cartas-google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap', array(), null );
+
     // Estilo principal
-    wp_enqueue_style( 'cartas-style', get_stylesheet_uri(), array(), CARTAS_VERSION );
-    
+    wp_enqueue_style( 'cartas-style', get_stylesheet_uri(), array( 'cartas-google-fonts' ), CARTAS_VERSION );
+
     // Script principal
     wp_enqueue_script( 'cartas-script', CARTAS_THEME_URI . '/assets/js/main.js', array( 'jquery' ), CARTAS_VERSION, true );
     

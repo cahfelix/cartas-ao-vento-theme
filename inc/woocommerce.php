@@ -47,6 +47,26 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 /**
+ * Adiciona aviso de doação na página do produto
+ */
+function cartas_donation_notice() {
+    ?>
+    <div class="donation-notice">
+        <h3>💛 100% da Renda em Doações</h3>
+        <p>
+            Toda a renda da venda deste livro é destinada a doações para instituições que cuidam de animais.
+            Ao adquirir "Cartas ao Vento", você não apenas leva para casa uma história emocionante,
+            mas também ajuda a fazer a diferença na vida de outros animais que precisam de cuidado e amor.
+        </p>
+        <p style="margin-top: 1rem;">
+            <strong>Obrigado por fazer parte desta corrente de amor e solidariedade! 🐾</strong>
+        </p>
+    </div>
+    <?php
+}
+add_action( 'woocommerce_single_product_summary', 'cartas_donation_notice', 25 );
+
+/**
  * Customiza o wrapper do conteúdo do WooCommerce
  */
 function cartas_woocommerce_wrapper_start() {

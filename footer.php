@@ -10,30 +10,28 @@
         <div class="container">
             <?php if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) ) : ?>
                 <div class="footer-widgets">
-                    <div class="footer-widget-area">
-                        <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-                            <div class="footer-column">
-                                <?php dynamic_sidebar( 'footer-1' ); ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-                            <div class="footer-column">
-                                <?php dynamic_sidebar( 'footer-2' ); ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-                            <div class="footer-column">
-                                <?php dynamic_sidebar( 'footer-3' ); ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
+                    <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+                        <div class="footer-widget">
+                            <?php dynamic_sidebar( 'footer-1' ); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
+                        <div class="footer-widget">
+                            <?php dynamic_sidebar( 'footer-2' ); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
+                        <div class="footer-widget">
+                            <?php dynamic_sidebar( 'footer-3' ); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
-            
+
             <div class="site-info">
-                <div class="footer-menu">
+                <nav class="footer-navigation">
                     <?php
                     wp_nav_menu( array(
                         'theme_location' => 'footer',
@@ -42,15 +40,19 @@
                         'fallback_cb'    => false,
                     ) );
                     ?>
-                </div>
-                
+                </nav>
+
                 <div class="copyright">
                     <p>
-                        &copy; <?php echo date( 'Y' ); ?> 
+                        &copy; <?php echo date( 'Y' ); ?>
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                             <?php bloginfo( 'name' ); ?>
                         </a>
-                        <?php esc_html_e( '- Todos os direitos reservados', 'cartas-ao-vento' ); ?>
+                        - <?php esc_html_e( 'Feito com', 'cartas-ao-vento' ); ?> 💛
+                        <?php esc_html_e( 'em memória do Vento', 'cartas-ao-vento' ); ?>
+                    </p>
+                    <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+                        <?php esc_html_e( '100% da renda em doações para animais', 'cartas-ao-vento' ); ?> 🐾
                     </p>
                 </div>
             </div>
